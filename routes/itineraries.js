@@ -13,13 +13,13 @@ router.get('/', checkAuth, itinerariesCtrl.index)
 router.get('/:itineraryId', checkAuth, itinerariesCtrl.show)
 router.post('/', checkAuth, itinerariesCtrl.create)
 router.post('/:itineraryId/flights', checkAuth, itinerariesCtrl.createFlight)
-router.post('/:itineraryId/accomodations', checkAuth, itinerariesCtrl.createAccomodation)
+router.post('/:itineraryId/accommodations', checkAuth, itinerariesCtrl.createAccommodation)
 router.put('/:itineraryId', checkAuth, itinerariesCtrl.update)
 router.put('/:itineraryId/flights/:flightId', checkAuth, itinerariesCtrl.updateFlight)
-router.put('/:itineraryId/accomodations/:accomodationId', checkAuth, itinerariesCtrl.updateAccomodation)
+router.put('/:itineraryId/accommodations/:accommodationId', checkAuth, itinerariesCtrl.updateAccommodation)
 router.delete('/:itineraryId', checkAuth, itinerariesCtrl.delete)
 router.delete('/:itineraryId/flights/:flightId', checkAuth, itinerariesCtrl.deleteFlight)
-router.delete('/:itineraryId/accomodations/:accomodationId', checkAuth, itinerariesCtrl.deleteAccomodation)
+router.delete('/:itineraryId/accommodations/:accommodationId', checkAuth, itinerariesCtrl.deleteAccommodation)
 
 
 export { router }
