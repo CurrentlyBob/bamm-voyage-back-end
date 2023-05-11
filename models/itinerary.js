@@ -16,7 +16,7 @@ const flightSchema = new Schema(
   }
 )
 
-const accomodationSchema = new Schema(
+const accommodationSchema = new Schema(
   {
     type: {String, enum:["Hotel", "Cruise", "Airbnb", "Other"]},
     name: String,
@@ -39,7 +39,7 @@ const itinerarySchema = new Schema ({
   city: {String, required: true},
   country: {String, required: true},
   flights: [flightSchema],
-  accomodation: [accomodationSchema],
+  accommodation: [accommodationSchema],
   owner: {ObjectId, ref: "Profile"}
 })
 
