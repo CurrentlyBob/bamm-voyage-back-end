@@ -23,3 +23,5 @@ router.delete('/:itineraryId/accomodations/:accomodationId', checkAuth, itinerar
 
 
 export { router }
+
+

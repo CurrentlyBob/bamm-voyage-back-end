@@ -34,7 +34,7 @@ async function update(req, res) {
     }
 }
 
-async function deleteItenerary(req, res) {
+async function deleteItinerary(req, res) {
     try {
         
     } catch (error) {
@@ -50,7 +50,7 @@ async function createFlight(req, res) {
     }
 }
 
-async function createAccomodation(req, res) {
+async function updateFlight(req, res) {
     try {
         
     } catch (error) {
@@ -58,12 +58,51 @@ async function createAccomodation(req, res) {
     }
 }
 
+async function updateAccommodation(req, res) {
+    try {
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+async function createAccommodation(req, res) {
+    try {
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+async function deleteFlight(req, res) {
+    try {
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+async function deleteAccommodation(req, res) {
+    try {
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+
+
 export {
     create,
     index,
     show,
     update,
-    deleteItenerary as delete,
+    deleteItinerary as delete,
     createFlight,
-    createAccomodation,
+    createAccommodation,
+    updateFlight,
+    updateAccommodation,
+    deleteFlight,
+    deleteAccommodation,
 }
