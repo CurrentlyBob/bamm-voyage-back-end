@@ -5,9 +5,9 @@ const Schema = mongoose.Schema
 
 const flightSchema = new Schema(
   {
-    airline: {String, required: true},
+    airline: {type: String, required: true},
     roundtrip: Boolean,
-    departureAirport: {String, required: true},
+    departureAirport: {type: String, required: true},
     departureDate: Date,
     arrivalAirport: String, 
     arrivalDate: Date,
@@ -18,7 +18,7 @@ const flightSchema = new Schema(
 
 const accommodationSchema = new Schema(
   {
-    type: {String, enum:["Hotel", "Cruise", "Airbnb", "Other"]},
+    type: {type: String, enum:["Hotel", "Cruise", "Airbnb", "Other"]},
     name: String,
     checkInDate: Date,
     checkOutDate: Date,
@@ -30,17 +30,17 @@ const accommodationSchema = new Schema(
 
 const itinerarySchema = new Schema ({
 
-  title: {String, required: true},
+  title: {type: String, required: true},
   photo: String,
   budget: Number,
   cost: Number,
   startDate: Date,
   endDate: Date,
-  city: {String, required: true},
-  country: {String, required: true},
+  city: {type: String, required: true},
+  country: {type: String, required: true},
   flights: [flightSchema],
   accommodation: [accommodationSchema],
-  owner: {ObjectId, ref: "Profile"}
+  owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 })
 
 
