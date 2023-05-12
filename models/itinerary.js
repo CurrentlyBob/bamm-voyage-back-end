@@ -40,3 +40,5 @@ const itinerarySchema = new Schema({
 const Itinerary = mongoose.model("Itinerary", itinerarySchema);
 
 export { Itinerary };
+
+
