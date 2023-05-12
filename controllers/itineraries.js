@@ -15,9 +15,12 @@ async function create(req, res) {
 
 async function index(req, res) {
   try {
-
+    const itinerary= await Itinerary.find({owner: req.user.profile})
+    // .sort SORT BY START DATE 
+    res.status(201).json(itinerary)
   } catch (error) {
     console.log(error)
+    res.status(500).json(error)
   }
 }
 
@@ -26,6 +29,7 @@ async function show(req, res) {
 
   } catch (error) {
     console.log(error)
+    res.status(500).json(error)
   }
 }
 
@@ -34,6 +38,7 @@ async function update(req, res) {
 
   } catch (error) {
     console.log(error)
+    res.status(500).json(error)
   }
 }
 
@@ -42,6 +47,7 @@ async function deleteItinerary(req, res) {
 
   } catch (error) {
     console.log(error)
+    res.status(500).json(error)
   }
 }
 
@@ -50,6 +56,7 @@ async function createFlight(req, res) {
 
   } catch (error) {
     console.log(error)
+    res.status(500).json(error)
   }
 }
 
@@ -58,6 +65,7 @@ async function updateFlight(req, res) {
 
   } catch (error) {
     console.log(error)
+    res.status(500).json(error)
   }
 }
 
@@ -66,6 +74,7 @@ async function updateAccommodation(req, res) {
 
   } catch (error) {
     console.log(error)
+    res.status(500).json(error)
   }
 }
 
@@ -74,6 +83,7 @@ async function createAccommodation(req, res) {
 
   } catch (error) {
     console.log(error)
+    res.status(500).json(error)
   }
 }
 
@@ -82,6 +92,7 @@ async function deleteFlight(req, res) {
 
   } catch (error) {
     console.log(error)
+    res.status(500).json(error)
   }
 }
 
@@ -90,6 +101,7 @@ async function deleteAccommodation(req, res) {
 
   } catch (error) {
     console.log(error)
+    res.status(500).json(error)
   }
 }
 
