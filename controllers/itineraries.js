@@ -100,7 +100,10 @@ async function createAccommodation(req, res) {
 
 async function deleteFlight(req, res) {
   try {
-
+    const itinerary= await Itinerary.findById(req.params.itineraryId)
+    itinerary.flights.remove({_id: req.params.flightId})
+    await itinerary.save()
+    res.status(201).json(itinerary)
   } catch (error) {
     console.log(error)
     res.status(500).json(error)
@@ -109,7 +112,10 @@ async function deleteFlight(req, res) {
 
 async function deleteAccommodation(req, res) {
   try {
-
+    const itinerary= await Itinerary.findById(req.params.itineraryId)
+    itinerary.accommodations.remove({_id: req.params.accommodationId})
+    await itinerary.save()
+    res.status(201).json(itinerary)
   } catch (error) {
     console.log(error)
     res.status(500).json(error)
