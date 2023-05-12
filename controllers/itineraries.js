@@ -56,7 +56,11 @@ async function deleteItinerary(req, res) {
 
 async function createFlight(req, res) {
   try {
-
+    const itinerary= await Itinerary.findById(req.params.itineraryId)
+    itinerary.flights.push(req.body)
+    await itinerary.save()
+    const flights= itinerary.flights[itinerary.flights.length -1]
+    res.status(201).json(flights)
   } catch (error) {
     console.log(error)
     res.status(500).json(error)
