@@ -69,7 +69,11 @@ async function createFlight(req, res) {
 
 async function updateFlight(req, res) {
   try {
-
+    const itinerary= await Itinerary.findById(req.params.itineraryId)
+    const flight= itinerary.flights.id(req.params.flightId)
+    flight.set(req.body)
+    await itinerary.save()
+    res.status(201).json(itinerary)
   } catch (error) {
     console.log(error)
     res.status(500).json(error)
@@ -78,7 +82,11 @@ async function updateFlight(req, res) {
 
 async function updateAccommodation(req, res) {
   try {
-
+    const itinerary= await Itinerary.findById(req.params.itineraryId)
+    const accommodation= itinerary.accommodations.id(req.params.accommodationId)
+    accommodation.set(req.body)
+    await itinerary.save()
+    res.status(201).json(itinerary)
   } catch (error) {
     console.log(error)
     res.status(500).json(error)
