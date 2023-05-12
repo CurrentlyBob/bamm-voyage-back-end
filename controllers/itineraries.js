@@ -87,7 +87,11 @@ async function updateAccommodation(req, res) {
 
 async function createAccommodation(req, res) {
   try {
-
+    const itinerary= await Itinerary.findById(req.params.itineraryId)
+    itinerary.accommodations.push(req.body)
+    await itinerary.save()
+    const accommodations= itinerary.accommodations[itinerary.accommodations.length -1]
+    res.status(201).json(accommodations)
   } catch (error) {
     console.log(error)
     res.status(500).json(error)
