@@ -36,7 +36,8 @@ async function show(req, res) {
 
 async function update(req, res) {
   try {
-
+    const itinerary= await Itinerary.findByIdAndUpdate(req.params.itineraryId, req.body, {new: true})
+    res.status(200).json(itinerary)
   } catch (error) {
     console.log(error)
     res.status(500).json(error)
