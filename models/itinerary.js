@@ -31,7 +31,7 @@ const accommodationSchema = new Schema(
 const itinerarySchema = new Schema ({
 
   title: {type: String, required: true},
-  photo: String,
+  // photo: String,
   budget: Number,
   cost: Number,
   startDate: Date,
