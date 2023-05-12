@@ -46,7 +46,8 @@ async function update(req, res) {
 
 async function deleteItinerary(req, res) {
   try {
-
+    const itinerary= await Itinerary.findByIdAndDelete(req.params.itineraryId)
+    res.status(200).json(itinerary)
   } catch (error) {
     console.log(error)
     res.status(500).json(error)
