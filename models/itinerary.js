@@ -31,7 +31,7 @@ const accommodationSchema = new Schema(
 const itinerarySchema = new Schema ({
 
   title: {type: String, required: true},
-  photo: String,
+  // photo: String,
   budget: Number,
   cost: Number,
   startDate: Date,
@@ -39,7 +39,7 @@ const itinerarySchema = new Schema ({
   city: {type: String, required: true},
   country: {type: String, required: true},
   flights: [flightSchema],
-  accommodation: [accommodationSchema],
+  accommodations: [accommodationSchema],
   owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 })
 
