@@ -26,7 +26,8 @@ async function index(req, res) {
 
 async function show(req, res) {
   try {
-
+    const itinerary= await Itinerary.findById(req.params.itineraryId)
+    res.status(200).json(itinerary)
   } catch (error) {
     console.log(error)
     res.status(500).json(error)
