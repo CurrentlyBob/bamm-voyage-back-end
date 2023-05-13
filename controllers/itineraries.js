@@ -59,6 +59,7 @@ async function deleteItinerary(req, res) {
 
 async function createFlight(req, res) {
   try {
+    req.body.roundtrip = !!req.body.roundtrip
     const itinerary = await Itinerary.findById(req.params.itineraryId);
     itinerary.flights.push(req.body);
     await itinerary.save();
@@ -72,6 +73,7 @@ async function createFlight(req, res) {
 
 async function updateFlight(req, res) {
   try {
+    req.body.roundtrip = !!req.body.roundtrip
     const itinerary = await Itinerary.findById(req.params.itineraryId);
     const flight = itinerary.flights.id(req.params.flightId);
     flight.set(req.body);
