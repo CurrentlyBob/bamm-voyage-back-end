@@ -73,6 +73,7 @@ async function createFlight(req, res) {
 
 async function updateFlight(req, res) {
   try {
+    req.body.roundtrip = !!req.body.roundtrip
     const itinerary = await Itinerary.findById(req.params.itineraryId);
     const flight = itinerary.flights.id(req.params.flightId);
     flight.set(req.body);
