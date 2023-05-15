@@ -23,6 +23,15 @@ const accommodationSchema = new Schema({
   cost: Number,
 });
 
+const activitySchema = new Schema({
+  category: { type: String, enum: ["Activity", "Restaurant", "Landmark", "Nightlife"] },
+  activityName: String,
+  activityDate: Date,
+  activityWebsite: String,
+  notes: String,
+  cost: Number,
+});
+
 const itinerarySchema = new Schema({
   title: { type: String, required: true },
   imgUrl: String,
@@ -34,6 +43,7 @@ const itinerarySchema = new Schema({
   country: { type: String, required: true },
   flights: [flightSchema],
   accommodations: [accommodationSchema],
+  activities: [activitySchema],
   owner: { type: Schema.Types.ObjectId, ref: "Profile" },
 });
 

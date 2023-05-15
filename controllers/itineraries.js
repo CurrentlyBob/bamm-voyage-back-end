@@ -138,6 +138,47 @@ async function deleteAccommodation(req, res) {
   }
 }
 
+async function createActivity(req, res) {
+  try {
+    const itinerary = await Itinerary.findById(req.params.itineraryId);
+    itinerary.activities.push(req.body);
+    await itinerary.save();
+    const activities =
+      itinerary.activities[itinerary.activities.length - 1];
+    res.status(201).json(activities);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+}
+
+async function updateActivity(req, res) {
+  try {
+    const itinerary = await Itinerary.findById(req.params.itineraryId);
+    const activity = itinerary.activities.id(
+      req.params.activityId
+    );
+    activity.set(req.body);
+    await itinerary.save();
+    res.status(201).json(itinerary);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+}
+
+async function deleteActivity(req, res) {
+  try {
+    const itinerary = await Itinerary.findById(req.params.itineraryId);
+    itinerary.activities.remove({ _id: req.params.activityId });
+    await itinerary.save();
+    res.status(201).json(itinerary);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+}
+
 export {
   create,
   index,
@@ -150,4 +191,7 @@ export {
   updateAccommodation,
   deleteFlight,
   deleteAccommodation,
+  createActivity,
+  updateActivity,
+  deleteActivity,
 };
