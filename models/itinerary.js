@@ -28,6 +28,8 @@ const activitySchema = new Schema({
   name: String,
   date: Date,
   website: String,
+  activityDate: Date,
+  activityWebsite: String,
   notes: String,
   cost: Number,
 });
