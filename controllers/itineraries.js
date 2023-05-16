@@ -15,7 +15,7 @@ async function create(req, res) {
 async function index(req, res) {
   try {
     const itinerary = await Itinerary.find({ owner: req.user.profile });
-    // .sort SORT BY START DATE
+    itinerary.sort((a, b) => a.startDate - b.startDate)
     res.status(201).json(itinerary);
   } catch (error) {
     console.log(error);
