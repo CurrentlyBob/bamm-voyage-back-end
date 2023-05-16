@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 
 const flightSchema = new Schema({
   airline: { type: String, required: true },
-  roundtrip: Boolean,
   departureAirport: { type: String, required: true },
   departureDate: Date,
   arrivalAirport: String,
