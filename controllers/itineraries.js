@@ -26,6 +26,16 @@ async function index(req, res) {
 async function show(req, res) {
   try {
     const itinerary = await Itinerary.findById(req.params.itineraryId);
+    const sortedObj = itinerary.flights.reduce((obj, flight) =>{
+      if (obj[flight.recordLocator]) {
+        obj[flight.recordLocator] = [...obj[flight.recordLocator], flight]
+      } else {
+        obj[flight.recordLocator] = [flight]
+      }
+      return obj
+    }, {})
+
+    itinerary.flights = Object.values(sortedObj).flat()
     res.status(200).json(itinerary);
   } catch (error) {
     console.log(error);
