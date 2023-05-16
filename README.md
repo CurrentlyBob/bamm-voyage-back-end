@@ -15,6 +15,7 @@ Check out our original planning materials [here](https://trello.com/b/9GNNPfib/b
 ## Contributors
 - [Bobby Walsh](https://github.com/CurrentlyBob)
 - [Andrea Bances-Monard](https://github.com/andrea1234321)
+- [Melvin Fontanez Jr](https://github.com/mfontanez21)
 - [Monica Scoletti](https://github.com/MonicaSue)
 
 ## Technologies Used: 
