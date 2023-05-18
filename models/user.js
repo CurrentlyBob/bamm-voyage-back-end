@@ -4,20 +4,23 @@ import bcrypt from 'bcrypt'
 const saltRounds = 6
 const Schema = mongoose.Schema
 
-const userSchema = new Schema({
-  name: String,
-  email: { type: String, required: true, lowercase: true },
-  password: String,
-  profile: { type: Schema.Types.ObjectId, ref: 'Profile' },
-}, {
-  timestamps: true,
-})
+const userSchema = new Schema(
+  {
+    name: String,
+    email: { type: String, required: true, lowercase: true },
+    password: String,
+    profile: { type: Schema.Types.ObjectId, ref: 'Profile' },
+  },
+  {
+    timestamps: true,
+  },
+)
 
 userSchema.set('toJSON', {
   transform: function (doc, ret) {
     delete ret.password
     return ret
-  }
+  },
 })
 
 userSchema.pre('save', async function (next) {

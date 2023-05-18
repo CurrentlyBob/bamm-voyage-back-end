@@ -6,7 +6,6 @@ const router = Router()
 
 /*---------- Public Routes ----------*/
 
-
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
 router.get('/', checkAuth, itinerariesCtrl.index)
@@ -24,7 +23,4 @@ router.delete('/:itineraryId/flights/:flightId', checkAuth, itinerariesCtrl.dele
 router.delete('/:itineraryId/accommodations/:accommodationId', checkAuth, itinerariesCtrl.deleteAccommodation)
 router.delete('/:itineraryId/activities/:activityId', checkAuth, itinerariesCtrl.deleteActivity)
 
-
 export { router }
-
-
