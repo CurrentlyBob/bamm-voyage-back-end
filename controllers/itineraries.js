@@ -8,7 +8,7 @@ async function create(req, res) {
     res.status(201).json(itinerary)
   } catch (error) {
     console.log(error)
-    res.status(500).json(error)
+    res.status(500).json({ error: 'Internal Server Error' })
   }
 }
 
@@ -19,7 +19,7 @@ async function index(req, res) {
     res.status(201).json(itinerary)
   } catch (error) {
     console.log(error)
-    res.status(500).json(error)
+    res.status(500).json({ error: 'Internal Server Error' })
   }
 }
 
@@ -39,7 +39,7 @@ async function show(req, res) {
     res.status(200).json(itinerary)
   } catch (error) {
     console.log(error)
-    res.status(500).json(error)
+    res.status(500).json({ error: 'Internal Server Error' })
   }
 }
 
@@ -49,7 +49,7 @@ async function update(req, res) {
     res.status(200).json(itinerary)
   } catch (error) {
     console.log(error)
-    res.status(500).json(error)
+    res.status(500).json({ error: 'Internal Server Error' })
   }
 }
 
@@ -59,7 +59,7 @@ async function deleteItinerary(req, res) {
     res.status(200).json(itinerary)
   } catch (error) {
     console.log(error)
-    res.status(500).json(error)
+    res.status(500).json({ error: 'Internal Server Error' })
   }
 }
 
@@ -72,7 +72,7 @@ async function createFlight(req, res) {
     res.status(201).json(flights)
   } catch (error) {
     console.log(error)
-    res.status(500).json(error)
+    res.status(500).json({ error: 'Internal Server Error' })
   }
 }
 
@@ -85,7 +85,7 @@ async function updateFlight(req, res) {
     res.status(201).json(itinerary)
   } catch (error) {
     console.log(error)
-    res.status(500).json(error)
+    res.status(500).json({ error: 'Internal Server Error' })
   }
 }
 
@@ -98,7 +98,7 @@ async function updateAccommodation(req, res) {
     res.status(201).json(itinerary)
   } catch (error) {
     console.log(error)
-    res.status(500).json(error)
+    res.status(500).json({ error: 'Internal Server Error' })
   }
 }
 
@@ -111,7 +111,7 @@ async function createAccommodation(req, res) {
     res.status(201).json(accommodations)
   } catch (error) {
     console.log(error)
-    res.status(500).json(error)
+    res.status(500).json({ error: 'Internal Server Error' })
   }
 }
 
@@ -123,7 +123,7 @@ async function deleteFlight(req, res) {
     res.status(201).json(itinerary)
   } catch (error) {
     console.log(error)
-    res.status(500).json(error)
+    res.status(500).json({ error: 'Internal Server Error' })
   }
 }
 
@@ -135,7 +135,7 @@ async function deleteAccommodation(req, res) {
     res.status(201).json(itinerary)
   } catch (error) {
     console.log(error)
-    res.status(500).json(error)
+    res.status(500).json({ error: 'Internal Server Error' })
   }
 }
 
@@ -148,7 +148,7 @@ async function createActivity(req, res) {
     res.status(201).json(activities)
   } catch (error) {
     console.log(error)
-    res.status(500).json(error)
+    res.status(500).json({ error: 'Internal Server Error' })
   }
 }
 
@@ -161,7 +161,7 @@ async function updateActivity(req, res) {
     res.status(201).json(itinerary)
   } catch (error) {
     console.log(error)
-    res.status(500).json(error)
+    res.status(500).json({ error: 'Internal Server Error' })
   }
 }
 
@@ -173,7 +173,7 @@ async function deleteActivity(req, res) {
     res.status(201).json(itinerary)
   } catch (error) {
     console.log(error)
-    res.status(500).json(error)
+    res.status(500).json({ error: 'Internal Server Error' })
   }
 }
 
