@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema
 
 const flightSchema = new Schema({
   airline: { type: String, required: true },
@@ -10,27 +10,27 @@ const flightSchema = new Schema({
   arrivalDate: Date,
   recordLocator: String,
   cost: Number,
-});
+})
 
 const accommodationSchema = new Schema({
-  type: { type: String, enum: ["Hotel", "Cruise", "Airbnb", "Other"] },
+  type: { type: String, enum: ['Hotel', 'Cruise', 'Airbnb', 'Other'] },
   name: String,
   checkInDate: Date,
   checkOutDate: Date,
   address: String,
   website: String,
   cost: Number,
-});
+})
 
 const activitySchema = new Schema({
-  category: { type: String, enum: ["Activity", "Restaurant", "Landmark", "Nightlife"] },
+  category: { type: String, enum: ['Activity', 'Restaurant', 'Landmark', 'Nightlife'] },
   name: String,
   date: Date,
   activityDate: Date,
   activityWebsite: String,
   notes: String,
   cost: Number,
-});
+})
 
 const itinerarySchema = new Schema({
   title: { type: String, required: true },
@@ -44,11 +44,9 @@ const itinerarySchema = new Schema({
   flights: [flightSchema],
   accommodations: [accommodationSchema],
   activities: [activitySchema],
-  owner: { type: Schema.Types.ObjectId, ref: "Profile" },
-});
+  owner: { type: Schema.Types.ObjectId, ref: 'Profile' },
+})
 
-const Itinerary = mongoose.model("Itinerary", itinerarySchema);
+const Itinerary = mongoose.model('Itinerary', itinerarySchema)
 
-export { Itinerary };
-
-
+export { Itinerary }

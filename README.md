@@ -1,4 +1,3 @@
-
 # BAMM Voyage
 
 ## Click [here](insert link here) to try it out!
@@ -11,24 +10,22 @@ At BAMM Voyage (pronounced like Bon Voyage), we share a passion for travel and u
 
 Check out our original planning materials [here](https://trello.com/b/9GNNPfib/bamm-voyage).
 
-
 ## Contributors
+
 - [Bobby Walsh](https://github.com/CurrentlyBob)
 - [Andrea Bances-Monard](https://github.com/andrea1234321)
 - [Melvin Fontanez Jr](https://github.com/mfontanez21)
 - [Monica Scoletti](https://github.com/MonicaSue)
 
-## Technologies Used: 
+## Technologies Used:
 
 - JavaScript
-- Git 
+- Git
 - Node.js
 - Express
 - MongoDB
 - Mongoose
 - JWT Auth
-
-
 
 ## Stretch Goals:
 
