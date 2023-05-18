@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node ./bin/www.js"
+    "start": "node ./bin/www.js",
+    "format:fix": "prettier --write ."
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
@@ -15,7 +16,8 @@
     "express-form-data": "^2.0.22",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.1.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "prettier": "^2.8.8"
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.2.5"
