@@ -23,7 +23,7 @@ const accommodationSchema = new Schema({
 })
 
 const activitySchema = new Schema({
-  category: { type: String, enum: ['Activity', 'Restaurant', 'Landmark', 'Nightlife'] },
+  category: { type: String, enum: ['Activity', 'Restaurant', 'Landmark', 'Nightlife', "Other"] },
   name: String,
   activityDate: Date,
   activityWebsite: String,
